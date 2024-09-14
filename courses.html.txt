@@ -1,0 +1,8 @@
+<main>
+    <h1>Courses</h1>
+    <ul>
+        <li><strong>Course Name 1:</strong> Brief description.</li>
+        <li><strong>Course Name 2:</strong> Brief description.</li>
+        <!-- Add more courses as needed -->
+    </ul>
+</main>
