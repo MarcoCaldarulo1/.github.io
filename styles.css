@@ -123,29 +123,51 @@ button[type="submit"]:hover {
 /* Hero Section */
 .hero-section {
     position: relative;
-    background: url('images/hero-background.jpg') no-repeat center center/cover;
-    height: 100vh;
+    height: 100vh; /* Full viewport height */
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-end; /* Ensure content stays above sailing image */
     color: #fff;
     margin-top: 60px; /* Adjust for fixed navbar */
 }
 
-.hero-section .overlay {
+.wave-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh; /* Half of the viewport height */
+    object-fit: cover;
+    z-index: 0;
+}
+
+.video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.3); /* Dark overlay for better contrast */
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     width: 90%;
     margin: 0 auto;
+}
+
+.sailing-image {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.sailing-image img {
+    width: 100%;
+    height: auto;
 }
 
 .hero-content h1 {
@@ -156,6 +178,29 @@ button[type="submit"]:hover {
 .hero-content p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
+}
+
+.btn {
+    background-color: #fff;
+    color: #1E90FF;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #187bcd;
+    color: #fff;
+}
+
+/* Divider */
+.divider {
+    width: 80%;
+    height: 2px;
+    background-color: #e0e0e0;
+    margin: 2rem auto;
 }
 
 /* Button Styling */
