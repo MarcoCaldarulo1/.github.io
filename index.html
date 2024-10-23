@@ -2,42 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Marco Caldarulo - Homepage</title>
+    <title>Marco Caldarulo - Private Equity Investor & Infrastructure Expert</title>
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Optional: Add Google Fonts for typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="cv.html">CV</a></li>
-            <li><a href="seminars.html">Seminars</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Marco Caldarulo</a>
+            <ul class="nav-menu">
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="seminars.html">Seminars</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Hero Section -->
     <header class="hero-section">
-        <div class="hero-content">
+        <div class="container hero-content">
             <div class="hero-text">
                 <h1>Marco Caldarulo</h1>
-                <h3>Private Equity Investor & Infrastructure Expert</h3>
-                <a href="cv.html" class="cta-btn">Hire Me</a>
-            </div>
-            <div class="hero-image">
-                <img src="your-photo.jpg" alt="Marco Caldarulo">
+                <p>Private Equity Investor & Infrastructure Expert</p>
+                <a href="contact.html" class="btn">Get in Touch</a>
             </div>
         </div>
     </header>
 
+    <!-- About Section -->
+    <section class="about-me">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/Marco_linkedin.jpeg" alt="Marco Caldarulo">
+                </div>
+                <div class="about-description">
+                    <h2>About Me</h2>
+                    <p>
+                        I am a passionate professional with a strong background in private equity, infrastructure investments, and strategic advisory...
+                    </p>
+                    <a href="about.html" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Marco Caldarulo</p>
+        <div class="container footer-content">
+            <p>&copy; 2024 Marco Caldarulo</p>
+            <div class="social-media">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
     </footer>
+
+    <!-- JavaScript for Interactive Elements -->
+    <script src="script.js"></script>
 </body>
 </html>
