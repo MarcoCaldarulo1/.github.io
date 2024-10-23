@@ -185,33 +185,39 @@ nav {
     position: relative;
     z-index: 2;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-image {
     flex: 1;
-    max-width: 40%;
+    max-width: 30%;
     display: flex;
     justify-content: center;
+    margin-right: 2rem;
 }
 
 .about-image img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem; /* Added margin to prevent overlap with header */
 }
 
 .about-description {
     flex: 2;
-    margin-left: 2rem;
     font-size: 1.1rem;
     text-align: left;
+    line-height: 1.8;
 }
 
 .about-description h2 {
@@ -228,26 +234,27 @@ nav {
 
 /* Key Skills Section */
 .key-skills {
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
 }
 
 .key-skill-box {
-    background-color: #1E90FF;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 15px;
+    color: #1E90FF;
     font-weight: 600;
     display: flex;
     align-items: center;
+    font-size: 1rem;
+    gap: 0.5rem;
+    padding: 0.5rem;
 }
 
-.company-logo {
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
+.key-skill-box img {
+    width: 40px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Interests Section */
