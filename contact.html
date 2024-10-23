@@ -11,16 +11,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="cv.html">CV</a></li>
-            <li><a href="seminars.html">Seminars</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+    <!-- Navigation Bar (consistent with index.html) -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Marco Caldarulo</a>
+            <ul class="nav-menu">
+                <li><a href="about.html" class="nav-button">About</a></li>
+                <li><a href="courses.html" class="nav-button">Courses</a></li>
+                <li><a href="cv.html" class="nav-button">CV</a></li>
+                <li><a href="seminars.html" class="nav-button">Seminars</a></li>
+                <li><a href="contact.html" class="nav-button">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </nav>
 
     <!-- Contact Section (2-column layout) -->
@@ -50,8 +55,6 @@
                     <label for="message">What Do You Have in Mind</label>
                     <textarea id="message" name="Message" placeholder="Please enter query..." required></textarea>
                 </div>
-                <!-- Optional: Hidden Field for Redirect -->
-                <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
                 <button type="submit">Submit</button>
             </form>
             <div id="form-response" style="display:none; color: green;">
@@ -85,12 +88,20 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer (consistent with index.html) -->
     <footer>
-        <p>&copy; 2024 Marco Caldarulo</p>
+        <div class="container footer-content">
+            <p>&copy; 2024 Marco Caldarulo</p>
+            <div class="social-media">
+                <a href="https://linkedin.com/in/marcocaldarulo" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:marcocaldarulo1@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
     </footer>
 
     <!-- JavaScript for Form Submission Confirmation -->
+    <script src="scripts.js"></script>
+
     <script>
         const form = document.getElementById('contact-form');
         const responseDiv = document.getElementById('form-response');
@@ -114,3 +125,8 @@
                     alert("Oops! Something went wrong.");
                     console.log("Form submission error", response);
                 }
+            });
+        });
+    </script>
+</body>
+</html>
