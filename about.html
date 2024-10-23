@@ -112,52 +112,56 @@
     <!-- JavaScript to Render Map -->
     <script>
     am5.ready(function() {
-        // Create root element
-        var root = am5.Root.new("worldMap");
+        try {
+            // Create root element
+            var root = am5.Root.new("worldMap");
 
-        // Set themes
-        root.setThemes([am5themes_Animated.new(root)]);
+            // Set themes
+            root.setThemes([am5themes_Animated.new(root)]);
 
-        // Create the map chart
-        var chart = root.container.children.push(
-            am5.MapChart.new(root, {
-                panX: "none",
-                panY: "none",
-                projection: am5map.geoMercator()
-            })
-        );
+            // Create the map chart
+            var chart = root.container.children.push(
+                am5.MapChart.new(root, {
+                    panX: "none",
+                    panY: "none",
+                    projection: am5.mapMercator()
+                })
+            );
 
-        // Create polygon series for world map
-        var polygonSeries = chart.series.push(
-            am5.MapPolygonSeries.new(root, {
-                geoJSON: am5geodata_worldLow
-            })
-        );
+            // Create polygon series for world map
+            var polygonSeries = chart.series.push(
+                am5.MapPolygonSeries.new(root, {
+                    geoJSON: am5geodata_worldLow
+                })
+            );
 
-        // Add color-coded regions
-        polygonSeries.mapPolygons.template.setAll({
-            tooltipText: "{name}",
-            interactive: true,
-            fill: am5.color(0xDDDDDD) // Default color
-        });
+            // Add color-coded regions
+            polygonSeries.mapPolygons.template.setAll({
+                tooltipText: "{name}",
+                interactive: true,
+                fill: am5.color(0xDDDDDD) // Default color
+            });
 
-        // Countries visited
-        var visitedCountries = ["IT", "FR", "AE"]; // Add country codes here (ISO 3166-1 alpha-2)
-        var nextCountries = ["JP"]; // Add next country codes
+            // Countries visited
+            var visitedCountries = ["IT", "FR", "AE"]; // Add country codes here (ISO 3166-1 alpha-2)
+            var nextCountries = ["JP"]; // Add next country codes
 
-        polygonSeries.mapPolygons.template.adapters.add("fill", function(fill, target) {
-            var id = target.dataItem.get("id");
-            if (visitedCountries.indexOf(id) >= 0) {
-                return am5.color(0x1E90FF); // Color for visited countries
-            } else if (nextCountries.indexOf(id) >= 0) {
-                return am5.color(0xFF6347); // Color for next countries
-            }
-            return fill;
-        });
+            polygonSeries.mapPolygons.template.adapters.add("fill", function(fill, target) {
+                var id = target.dataItem.get("id");
+                if (visitedCountries.indexOf(id) >= 0) {
+                    return am5.color(0x1E90FF); // Color for visited countries
+                } else if (nextCountries.indexOf(id) >= 0) {
+                    return am5.color(0xFF6347); // Color for next countries
+                }
+                return fill;
+            });
 
-        // Add total countries count
-        document.querySelector(".travels-section p").innerHTML +=
-            `<br><strong>Total countries visited: ${visitedCountries.length}</strong>`;
+            // Add total countries count
+            document.querySelector(".travels-section p").innerHTML +=
+                `<br><strong>Total countries visited: ${visitedCountries.length}</strong>`;
+        } catch (error) {
+            console.error("Error rendering the map:", error);
+        }
     }); // end am5.ready()
     </script>
 
