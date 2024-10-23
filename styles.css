@@ -51,6 +51,8 @@ nav {
 
 .nav-menu li a {
     text-decoration: none;
+    color: #fff; /* Make sure text color is visible on nav background */
+    font-weight: 500;
 }
 
 .nav-button {
@@ -164,7 +166,7 @@ nav {
 .about-me {
     position: relative;
     padding: 4rem 0;
-    color: #fff;
+    color: #333;
     background: url('images/sailing_boat.jpg') no-repeat center center/cover;
     overflow: hidden;
 }
@@ -243,11 +245,11 @@ nav {
 .key-skill-box {
     color: #1E90FF;
     font-weight: 600;
-    display: flex;
-    align-items: center;
+    display: inline-block;
     font-size: 1rem;
     gap: 0.5rem;
-    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: none;
 }
 
 .key-skill-box img {
