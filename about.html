@@ -120,16 +120,16 @@
 
         // Create the map chart
         var chart = root.container.children.push(
-            am5maps.MapChart.new(root, {
+            am5map.MapChart.new(root, {
                 panX: "none",
                 panY: "none",
-                projection: am5maps.geoMercator()
+                projection: am5map.geoMercator()
             })
         );
 
         // Create polygon series for world map
         var polygonSeries = chart.series.push(
-            am5maps.MapPolygonSeries.new(root, {
+            am5map.MapPolygonSeries.new(root, {
                 geoJSON: am5geodata_worldLow
             })
         );
