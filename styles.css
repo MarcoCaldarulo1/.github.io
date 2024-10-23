@@ -80,9 +80,11 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     color: #fff;
     text-align: center;
     margin-top: 60px;
+    padding: 0 20px; /* Add padding for better centering on smaller screens */
 }
 
 .wave-video {
@@ -116,15 +118,16 @@ nav {
     align-items: center;
     justify-content: center;
     height: 100%;
+    gap: 1rem;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
 }
 
 .welcome-text {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
@@ -241,7 +244,7 @@ footer {
     background-color: #1E90FF;
     color: #fff;
     text-align: center;
-    padding: 2rem 0;
+    padding: 1rem 0; /* Reduced padding for a smaller footer */
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -301,6 +304,10 @@ footer {
     /* Hero Section */
     .hero-content h1 {
         font-size: 2.5rem;
+    }
+
+    .welcome-text {
+        font-size: 1.5rem;
     }
 
     /* About Section */
