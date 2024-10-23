@@ -82,15 +82,84 @@
         </section>
 
         <!-- Travels Section -->
-        <section class="travels-section">
-            <h2>Travels</h2>
-            <p>Check out the countries I've visited and my next travel plans!</p>
-            <!-- Interactive Map -->
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/d/embed?mid=your-map-id" width="100%" height="480"></iframe>
-            </div>
-        </section>
-    </main>
+<section class="travels-section">
+    <h2>Travels</h2>
+    <p>Check out the countries I've visited and my next travel plans!</p>
+    <!-- Interactive World Map -->
+    <div id="worldMap" style="width: 100%; height: 500px;"></div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container footer-content">
+        <p>&copy; 2024 Marco Caldarulo</p>
+        <div class="social-media">
+            <a href="https://linkedin.com/in/marcocaldarulo" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:marcocaldarulo1@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</footer>
+
+<!-- amCharts Library -->
+<script src="https://www.amcharts.com/lib/5/index.js"></script>
+<script src="https://www.amcharts.com/lib/5/geodata/worldLow.js"></script>
+<script src="https://www.amcharts.com/lib/5/maps.js"></script>
+<script src="https://www.amcharts.com/lib/5/themes/Animated.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<script>
+// JavaScript to Render Map
+am5.ready(function() {
+
+    // Create root element
+    var root = am5.Root.new("worldMap");
+
+    // Set themes
+    root.setThemes([am5themes_Animated.new(root)]);
+
+    // Create the map chart
+    var chart = root.container.children.push(
+        am5map.MapChart.new(root, {
+            panX: "none",
+            panY: "none",
+            projection: am5map.geoMercator()
+        })
+    );
+
+    // Create polygon series for world map
+    var polygonSeries = chart.series.push(
+        am5map.MapPolygonSeries.new(root, {
+            geoJSON: am5geodata_worldLow
+        })
+    );
+
+    // Add color-coded regions
+    polygonSeries.mapPolygons.template.setAll({
+        tooltipText: "{name}",
+        interactive: true,
+        fill: am5.color(0xDDDDDD) // Default color
+    });
+
+    // Countries visited
+    var visitedCountries = ["IT", "FR", "AE"]; // Add country codes here (ISO 3166-1 alpha-2)
+    var nextCountries = ["JP"]; // Add next country codes
+
+    polygonSeries.mapPolygons.template.adapters.add("fill", function(fill, target) {
+        var id = target.dataItem.get("id");
+        if (visitedCountries.indexOf(id) >= 0) {
+            return am5.color(0x1E90FF); // Color for visited countries
+        } else if (nextCountries.indexOf(id) >= 0) {
+            return am5.color(0xFF6347); // Color for next countries
+        }
+        return fill;
+    });
+
+    // Add total countries count
+    document.querySelector(".travels-section p").innerHTML +=
+        `<br><strong>Total countries visited: ${visitedCountries.length}</strong>`;
+
+}); // end am5.ready()
+</script>
 
     <!-- Footer -->
     <footer>
