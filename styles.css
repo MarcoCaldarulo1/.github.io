@@ -207,7 +207,69 @@ button[type="submit"]:hover {
     z-index: 1;
 }
 
-/* CV Section */
+/* About Page Styling */
+.about-main {
+    padding: 2rem;
+}
+
+.professional-section,
+.interests-section,
+.travels-section {
+    margin-bottom: 4rem;
+}
+
+.professional-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 40%;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    flex: 2;
+    margin-left: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Interests Section */
+.interests-content {
+    display: flex;
+    gap: 2rem;
+}
+
+.interest-box {
+    flex: 1;
+    text-align: center;
+}
+
+.interest-box img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Travels Section */
+.map-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.map-container iframe {
+    border: none;
+    width: 100%;
+    height: 480px;
+}
+
 /* CV Section */
 .cv-download {
     margin-top: 2rem;
@@ -228,15 +290,13 @@ button[type="submit"]:hover {
     background-color: #187bcd;
 }
 
-/* Additional Sections */
-
 .cv-content {
-    padding: 4rem 0; /* Adds spacing between the header and footer */
+    padding: 4rem 0;
     text-align: center;
 }
 
 .cv-preview {
-    margin: 2rem 0; /* Adds space around the embedded CV */
+    margin: 2rem 0;
 }
 
 /* Footer */
