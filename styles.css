@@ -208,6 +208,7 @@ button[type="submit"]:hover {
 }
 
 /* CV Section */
+/* CV Section */
 .cv-download {
     margin-top: 2rem;
 }
@@ -225,6 +226,17 @@ button[type="submit"]:hover {
 
 .cv-download a:hover {
     background-color: #187bcd;
+}
+
+/* Additional Sections */
+
+.cv-content {
+    padding: 4rem 0; /* Adds spacing between the header and footer */
+    text-align: center;
+}
+
+.cv-preview {
+    margin: 2rem 0; /* Adds space around the embedded CV */
 }
 
 /* Footer */
