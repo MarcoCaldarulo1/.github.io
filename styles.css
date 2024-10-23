@@ -222,6 +222,109 @@ nav {
     position: relative;
     color: #fff;
 }
+/* Professional Section */
+.professional-section {
+    margin-bottom: 4rem;
+}
+
+.professional-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    flex: 2;
+    font-size: 1.1rem;
+}
+
+.key-skills {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.key-skill-box {
+    background-color: #1E90FF;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.company-logo {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+/* Interests Section */
+.interests-section {
+    margin-bottom: 4rem;
+    border-top: 2px solid #e0e0e0;
+    padding-top: 2rem;
+}
+
+.interests-content {
+    display: flex;
+    gap: 2rem;
+}
+
+.interest-box {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.interest-box img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+/* Travels Section */
+.travels-section {
+    margin-bottom: 4rem;
+    border-top: 2px solid #e0e0e0;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.map-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.map-container iframe {
+    border: none;
+    width: 100%;
+    height: 480px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
 .main-content::before {
     content: '';
