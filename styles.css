@@ -120,7 +120,7 @@ button[type="submit"]:hover {
     background-color: #187bcd;
 }
 
-/* Hero Section */
+/* Hero Section (Wave Video) */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -157,19 +157,6 @@ button[type="submit"]:hover {
     z-index: 2;
 }
 
-.sailing-image {
-    position: relative;
-    width: 100%;
-    z-index: 2;
-    height: auto;
-}
-
-.sailing-image img {
-    width: 100%;
-    height: auto;
-    max-height: 50vh;
-}
-
 .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
@@ -195,6 +182,61 @@ button[type="submit"]:hover {
     color: #fff;
 }
 
+/* Divider */
+.divider {
+    width: 80%;
+    height: 2px;
+    background-color: #e0e0e0;
+    margin: 2rem auto;
+}
+
+/* About Section (with Sailing Boat Background) */
+.about-me {
+    background: url('images/sailing_boat.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 4rem 0;
+    position: relative;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 40%;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-description {
+    flex: 2;
+    margin-left: 2rem;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.about-description h2 {
+    margin-bottom: 1rem;
+}
+
+.about-description p {
+    margin-bottom: 1.5rem;
+}
+
+.about-description .btn {
+    display: inline-block;
+}
 /* Divider */
 .divider {
     width: 80%;
