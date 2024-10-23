@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome for social media icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dI70ZX5JnH00n5qb55WfHgJzg9xZlHBVtS0JfBZpRAHPW0gDJ5cXwniEdkMZjDEmUlxCRgIu5dMU5mZ4C1Npg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Optional: Add Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -61,28 +61,29 @@
 
         <!-- Contact Information -->
         <div class="contact-info">
-    <h2>Reach Me Directly</h2>
-    <p>
-        <i class="fas fa-envelope"></i> <strong>Academic Email:</strong>
-        <a href="mailto:marco.caldarulo@insead.edu">marco.caldarulo@insead.edu</a>
-    </p>
-    <p>
-        <i class="fas fa-envelope"></i> <strong>Gmail:</strong>
-        <a href="mailto:marcocaldarulo1@gmail.com">marcocaldarulo1@gmail.com</a>
-    </p>
-    <p>
-        <i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/marcocaldarulo/" target="_blank">linkedin.com/in/marcocaldarulo</a>
-    </p>
-    <div class="social-media-links">
-        <a href="https://www.linkedin.com/in/marcocaldarulo/" target="_blank">
-            <i class="fab fa-linkedin fa-2x"></i>
-        </a>
-        <a href="mailto:marcocaldarulo1@gmail.com">
-            <i class="fas fa-envelope fa-2x"></i>
-        </a>
+            <h2>Reach Me Directly</h2>
+            <p>
+                <i class="fas fa-envelope"></i> <strong>Academic Email:</strong>
+                <a href="mailto:marco.caldarulo@insead.edu">marco.caldarulo@insead.edu</a>
+            </p>
+            <p>
+                <i class="fas fa-envelope"></i> <strong>Gmail:</strong>
+                <a href="mailto:marcocaldarulo1@gmail.com">marcocaldarulo1@gmail.com</a>
+            </p>
+            <p>
+                <i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/marcocaldarulo/" target="_blank">linkedin.com/in/marcocaldarulo</a>
+            </p>
+            <div class="social-media-links">
+                <a href="https://www.linkedin.com/in/marcocaldarulo/" target="_blank">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="mailto:marcocaldarulo1@gmail.com">
+                    <i class="fas fa-envelope fa-2x"></i>
+                </a>
+            </div>
+        </div>
     </div>
-</div>
 
     <!-- Footer -->
     <footer>
@@ -108,11 +109,8 @@
                 if (response.ok) {
                     form.style.display = 'none';
                     responseDiv.style.display = 'block';
+                    console.log("Form submitted successfully");
                 } else {
                     alert("Oops! Something went wrong.");
+                    console.log("Form submission error", response);
                 }
-            });
-        });
-    </script>
-</body>
-</html>
