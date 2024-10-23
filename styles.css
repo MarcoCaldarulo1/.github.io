@@ -14,13 +14,13 @@ body {
 
 /* Navigation Bar */
 nav {
-    background-color: #1E90FF; /* Dodger Blue */
+    background-color: #1E90FF;
     padding: 1em 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 10;
-    border-bottom: 2px solid #187bcd; /* Delimited header with darker blue */
+    border-bottom: 2px solid #187bcd;
     transition: background-color 0.3s ease, border-bottom 0.3s ease;
 }
 
@@ -34,7 +34,7 @@ nav {
 }
 
 .logo {
-    color: #fff; /* White text for contrast */
+    color: #fff;
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: 700;
@@ -51,8 +51,8 @@ nav {
 }
 
 .nav-button {
-    background-color: #fff; /* White background for buttons */
-    color: #1E90FF; /* Button text color matches navbar background */
+    background-color: #fff;
+    color: #1E90FF;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     font-weight: 500;
@@ -60,7 +60,7 @@ nav {
 }
 
 .nav-button:hover {
-    background-color: #187bcd; /* Darker blue on hover */
+    background-color: #187bcd;
     color: #fff;
 }
 
@@ -123,11 +123,12 @@ button[type="submit"]:hover {
 /* Hero Section */
 .hero-section {
     position: relative;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
     color: #fff;
+    text-align: center;
     margin-top: 60px;
 }
 
@@ -136,7 +137,7 @@ button[type="submit"]:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: 50vh;
+    height: 100vh;
     object-fit: cover;
     z-index: 0;
 }
@@ -146,7 +147,7 @@ button[type="submit"]:hover {
     top: 0;
     left: 0;
     right: 0;
-    height: 50vh;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
@@ -154,15 +155,13 @@ button[type="submit"]:hover {
 .hero-content {
     position: relative;
     z-index: 2;
-    text-align: center;
-    width: 90%;
-    margin: 0 auto;
 }
 
 .sailing-image {
     position: relative;
-    z-index: 2;
     width: 100%;
+    z-index: 2;
+    height: auto;
 }
 
 .sailing-image img {
@@ -203,6 +202,13 @@ button[type="submit"]:hover {
     background-color: #e0e0e0;
     margin: 2rem auto;
 }
+/* Divider */
+.divider {
+    width: 80%;
+    height: 2px;
+    background-color: #e0e0e0;
+    margin: 2rem auto;
+}
 
 /* Button Styling */
 .btn {
@@ -228,13 +234,13 @@ button[type="submit"]:hover {
     margin: 2rem auto;
 }
 
+
 /* Main Content Styling */
 .main-content {
-    background: url('images/sailing_boat.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: none;
+    padding: 4rem 0;
     position: relative;
     color: #fff;
-    padding: 4rem 0;
 }
 
 .main-content::before {
