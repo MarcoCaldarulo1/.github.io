@@ -28,7 +28,7 @@ body {
 
 /* Main Content Styling */
 .main-content {
-    background: url('images/sailing-boat.jpg') no-repeat center center fixed;
+    background: url('images/sailing_boat.jpg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
     color: #fff;
