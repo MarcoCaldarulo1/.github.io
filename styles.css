@@ -10,6 +10,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #f9f9f9;
     color: #333;
+    padding-bottom: 80px; /* Adjust to match footer height */
 }
 
 /* Navigation Bar */
@@ -22,6 +23,10 @@ nav {
     z-index: 10;
     border-bottom: 2px solid #187bcd;
     transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav.scrolled {
+    background-color: #1E90FF !important; /* Make sure the color stays consistent */
 }
 
 .nav-container {
