@@ -13,7 +13,93 @@ body {
 }
 
 /* Navigation Bar */
-/* ... existing nav styles ... */
+nav {
+    background-color: #1E90FF; /* Changed to Dodger Blue */
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid #187bcd; /* Delimited header with darker blue */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: #fff; /* White text for contrast */
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-menu li {
+    /* Ensure list items have no default styling */
+}
+
+.nav-menu li a {
+    /* Remove existing styles */
+    text-decoration: none;
+}
+
+.nav-button {
+    background-color: #fff; /* White background for buttons */
+    color: #1E90FF; /* Button text color matches navbar background */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #187bcd; /* Darker blue on hover */
+    color: #fff;
+}
+
+.hamburger {
+    display: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive Navigation Menu */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        background-color: #1E90FF;
+        position: absolute;
+        top: 60px; /* Adjust according to navbar height */
+        right: 0;
+        width: 100%;
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 1em 0;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
 
 /* Hero Section */
 /* ... existing hero-section styles ... */
