@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Adding additional fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -82,82 +84,13 @@
         </section>
 
         <!-- Travels Section -->
-<section class="travels-section">
-    <h2>Travels</h2>
-    <p>Check out the countries I've visited and my next travel plans!</p>
-    <!-- Interactive World Map -->
-    <div id="worldMap" class="map-container"></div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <div class="container footer-content">
-        <p>&copy; 2024 Marco Caldarulo</p>
-        <div class="social-media">
-            <a href="https://linkedin.com/in/marcocaldarulo" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:marcocaldarulo1@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-    </div>
-</footer>
-
-<!-- amCharts Library -->
-<script src="https://www.amcharts.com/lib/5/index.js"></script>
-<script src="https://www.amcharts.com/lib/5/geodata/worldLow.js"></script>
-<script src="https://www.amcharts.com/lib/5/maps.js"></script>
-<script src="https://www.amcharts.com/lib/5/themes/Animated.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-// JavaScript to Render Map
-<script>
-am5.ready(function() {
-    // Create root element
-    var root = am5.Root.new("worldMap");
-
-    // Set themes
-    root.setThemes([am5themes_Animated.new(root)]);
-
-    // Create the map chart
-    var chart = root.container.children.push(
-        am5map.MapChart.new(root, {
-            panX: "none",
-            panY: "none",
-            projection: am5map.geoMercator()
-        })
-    );
-
-    // Create polygon series for world map
-    var polygonSeries = chart.series.push(
-        am5map.MapPolygonSeries.new(root, {
-            geoJSON: am5geodata_worldLow
-        })
-    );
-
-    // Add color-coded regions
-    polygonSeries.mapPolygons.template.setAll({
-        tooltipText: "{name}",
-        interactive: true,
-        fill: am5.color(0xDDDDDD) // Default color
-    });
-
-    // Countries visited
-    var visitedCountries = ["IT", "FR", "AE"]; // Add country codes here (ISO 3166-1 alpha-2)
-    var nextCountries = ["JP"]; // Add next country codes
-
-    polygonSeries.mapPolygons.template.adapters.add("fill", function(fill, target) {
-        var id = target.dataItem.get("id");
-        if (visitedCountries.indexOf(id) >= 0) {
-            return am5.color(0x1E90FF); // Color for visited countries
-        } else if (nextCountries.indexOf(id) >= 0) {
-            return am5.color(0xFF6347); // Color for next countries
-        }
-        return fill;
-    });
-
-    // Add total countries count
-    document.querySelector(".travels-section p").innerHTML +=
-        `<br><strong>Total countries visited: ${visitedCountries.length}</strong>`;
-}); // end am5.ready()
-</script>
+        <section class="travels-section">
+            <h2>Travels</h2>
+            <p>Check out the countries I've visited and my next travel plans!</p>
+            <!-- Interactive World Map -->
+            <div id="worldMap" class="map-container"></div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -169,6 +102,64 @@ am5.ready(function() {
             </div>
         </div>
     </footer>
+
+    <!-- amCharts Library -->
+    <script src="https://www.amcharts.com/lib/5/index.js"></script>
+    <script src="https://www.amcharts.com/lib/5/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://www.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <!-- JavaScript to Render Map -->
+    <script>
+    am5.ready(function() {
+        // Create root element
+        var root = am5.Root.new("worldMap");
+
+        // Set themes
+        root.setThemes([am5themes_Animated.new(root)]);
+
+        // Create the map chart
+        var chart = root.container.children.push(
+            am5maps.MapChart.new(root, {
+                panX: "none",
+                panY: "none",
+                projection: am5maps.geoMercator()
+            })
+        );
+
+        // Create polygon series for world map
+        var polygonSeries = chart.series.push(
+            am5maps.MapPolygonSeries.new(root, {
+                geoJSON: am5geodata_worldLow
+            })
+        );
+
+        // Add color-coded regions
+        polygonSeries.mapPolygons.template.setAll({
+            tooltipText: "{name}",
+            interactive: true,
+            fill: am5.color(0xDDDDDD) // Default color
+        });
+
+        // Countries visited
+        var visitedCountries = ["IT", "FR", "AE"]; // Add country codes here (ISO 3166-1 alpha-2)
+        var nextCountries = ["JP"]; // Add next country codes
+
+        polygonSeries.mapPolygons.template.adapters.add("fill", function(fill, target) {
+            var id = target.dataItem.get("id");
+            if (visitedCountries.indexOf(id) >= 0) {
+                return am5.color(0x1E90FF); // Color for visited countries
+            } else if (nextCountries.indexOf(id) >= 0) {
+                return am5.color(0xFF6347); // Color for next countries
+            }
+            return fill;
+        });
+
+        // Add total countries count
+        document.querySelector(".travels-section p").innerHTML +=
+            `<br><strong>Total countries visited: ${visitedCountries.length}</strong>`;
+    }); // end am5.ready()
+    </script>
 
     <!-- JavaScript for Interactive Elements -->
     <script src="script.js"></script>
