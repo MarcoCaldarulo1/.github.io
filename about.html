@@ -104,10 +104,10 @@
     </footer>
 
     <!-- amCharts Library -->
-    <script src="https://www.amcharts.com/lib/5/index.js"></script>
-    <script src="https://www.amcharts.com/lib/5/maps.js"></script>
-    <script src="https://www.amcharts.com/lib/5/geodata/worldLow.js"></script>
-    <script src="https://www.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/maps.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
     <!-- JavaScript to Render Map -->
     <script>
@@ -120,16 +120,16 @@
 
         // Create the map chart
         var chart = root.container.children.push(
-            am5map.MapChart.new(root, {
+            am5maps.MapChart.new(root, {
                 panX: "none",
                 panY: "none",
-                projection: am5map.geoMercator()
+                projection: am5maps.geoMercator()
             })
         );
 
         // Create polygon series for world map
         var polygonSeries = chart.series.push(
-            am5map.MapPolygonSeries.new(root, {
+            am5maps.MapPolygonSeries.new(root, {
                 geoJSON: am5geodata_worldLow
             })
         );
