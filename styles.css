@@ -12,6 +12,7 @@ body {
     color: #333;
     padding-bottom: 80px; /* Space for fixed footer */
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 /* Navigation Bar */
@@ -85,13 +86,14 @@ nav {
     text-align: center;
     margin-top: 60px;
     padding: 0 20px; /* Add padding for better centering on smaller screens */
+    overflow: hidden;
 }
 
 .wave-video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw; /* Stretch to full viewport width */
     height: 100%;
     object-fit: cover;
     z-index: 0;
@@ -103,6 +105,7 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100vw; /* Stretch to full viewport width */
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
@@ -162,6 +165,7 @@ nav {
     padding: 4rem 0;
     color: #fff;
     background: url('images/sailing_boat.jpg') no-repeat center center/cover;
+    overflow: hidden;
 }
 
 .about-me::before {
@@ -171,6 +175,7 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100vw; /* Stretch to full viewport width */
     background: rgba(0, 0, 0, 0.5); /* Adjust opacity for readability */
     z-index: 1;
 }
@@ -458,3 +463,24 @@ footer {
     .about-description {
         flex: 1 1 100%;
     }
+
+    .about-image img {
+        max-width: 80%;
+        margin-bottom: 2rem;
+    }
+
+    /* Contact Section */
+    .contact-container {
+        flex-direction: column;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media {
+        margin-top: 1rem;
+    }
+}
