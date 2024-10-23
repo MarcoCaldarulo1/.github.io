@@ -71,6 +71,55 @@ nav {
     cursor: pointer;
 }
 
+/* Form Styling */
+form {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+form .form-group label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+form .form-group input,
+form .form-group textarea {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+form .form-group input:focus,
+form .form-group textarea:focus {
+    outline: none;
+    border-color: #1E90FF;
+}
+
+button[type="submit"] {
+    background-color: #1E90FF;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #187bcd;
+}
+
 /* Hero Section */
 .hero-section {
     position: relative;
@@ -109,6 +158,7 @@ nav {
     margin-bottom: 2rem;
 }
 
+/* Button Styling */
 .btn {
     background-color: #fff;
     color: #1E90FF;
@@ -157,48 +207,24 @@ nav {
     z-index: 1;
 }
 
-/* About Section */
-.about-me {
-    padding: 4rem 0;
-    /* background-color: #f1f1f1; */ /* Removed to show background image */
+/* CV Section */
+.cv-download {
+    margin-top: 2rem;
 }
 
-.about-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+.cv-download a {
+    display: inline-block;
+    background-color: #1E90FF;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
-.about-image,
-.about-description {
-    flex: 1 1 45%;
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.about-description h2,
-.about-description p,
-.about-description a {
-    color: #fff; /* Text color set to white */
-}
-
-.about-description h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-}
-
-.about-description p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 1.5em;
+.cv-download a:hover {
+    background-color: #187bcd;
 }
 
 /* Footer */
