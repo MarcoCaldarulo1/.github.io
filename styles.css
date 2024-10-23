@@ -163,36 +163,38 @@ nav {
     /* background-color: #f1f1f1; */ /* Removed to show background image */
 }
 
+.about-me h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
 .about-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.about-image,
-.about-description {
-    flex: 1 1 45%;
+.about-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .about-image img {
     width: 100%;
     border-radius: 10px;
+    max-width: 250px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.about-description h2,
-.about-description p,
-.about-description a {
-    color: #fff; /* Text color set to white */
-}
-
-.about-description h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
+.about-description {
+    text-align: center;
+    color: #fff;
 }
 
 .about-description p {
@@ -268,20 +270,50 @@ footer {
     }
 
     /* About Section */
-    .about-content {
-        flex-direction: column;
-        align-items: center;
-    }
+.about-me {
+    padding: 4rem 0;
+    /* background-color: #f1f1f1; */
+}
 
-    .about-image,
-    .about-description {
-        flex: 1 1 100%;
-    }
+.about-me h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 2rem;
+}
 
-    .about-image img {
-        max-width: 80%;
-        margin-bottom: 2rem;
-    }
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    max-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-description {
+    text-align: center;
+    color: #fff;
+}
+
+.about-description p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+}
 
     /* Footer */
     .footer-content {
