@@ -26,6 +26,7 @@ nav {
     transition: background-color 0.3s ease, border-bottom 0.3s ease;
 }
 
+nav.style.backgroundColor = 'rgba(30, 144, 255, 0.8)'; // Light blue with transparency
 .nav-container {
     display: flex;
     justify-content: space-between;
