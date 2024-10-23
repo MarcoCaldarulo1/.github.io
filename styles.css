@@ -123,6 +123,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
     gap: 1rem;
 }
 
@@ -289,14 +290,11 @@ nav {
 .map-container {
     margin-top: 2rem;
     text-align: center;
-}
-
-.map-container iframe {
-    border: none;
     width: 100%;
-    height: 480px;
+    height: 500px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 /* Main Content Styling */
@@ -472,6 +470,11 @@ footer {
     /* Contact Section */
     .contact-container {
         flex-direction: column;
+    }
+
+    /* Travels Section */
+    .map-container {
+        height: 400px; /* Adjusted height for mobile view */
     }
 
     /* Footer */
