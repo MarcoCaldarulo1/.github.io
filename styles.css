@@ -158,6 +158,11 @@ button[type="submit"]:hover {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure the hero section covers full height */
 }
 
 .hero-content h1 {
@@ -200,8 +205,20 @@ button[type="submit"]:hover {
     padding: 4rem 0;
     position: relative;
 }
+.about-me::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity (0.5) for better readability */
+    z-index: 1;
+}
 
 .about-content {
+    position: relative;
+    z-index: 2; /* Bring text in front of overlay */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -483,8 +500,9 @@ footer {
     color: #fff;
     text-align: center;
     padding: 2rem 0;
-    position: relative;
+    position: fixed;
     bottom: 0;
+    z-index: 10;
     width: 100%;
 }
 
