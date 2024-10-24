@@ -126,16 +126,25 @@ nav {
 
 /* Booking Section */
 .book-now-section {
-    text-align: center;
+    text-align: left;
     background-color: #fff;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
 }
 
-/* Calendar Navigation */
+/* Calendar Container */
+.calendar-container {
+    flex: 1;
+    max-width: 300px;
+    text-align: left;
+}
+
 .calendar-navigation {
     display: flex;
     justify-content: space-between;
@@ -151,7 +160,7 @@ nav {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .calendar-nav-button:hover {
@@ -167,20 +176,19 @@ nav {
 #calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
+    gap: 5px;
     margin-bottom: 2rem;
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .calendar-day {
-    padding: 1rem;
+    padding: 0.6rem;
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-align: center;
+    font-size: 0.9rem;
 }
 
 .calendar-day:hover {
@@ -193,17 +201,27 @@ nav {
     border: 2px solid #FFA500;
 }
 
-/* Time Slots */
+/* Time Slots Section */
 #time-slots-container {
+    flex: 2;
+    text-align: left;
     margin-top: 2rem;
+}
+
+.time-slots-container-section {
+    margin-bottom: 2rem;
+}
+
+.time-slots-container-section h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .time-slots {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .time-slot {
@@ -232,18 +250,18 @@ nav {
 }
 
 #continue-button {
-    background-color: #1E90FF;
+    background-color: #FFD700;
     color: #fff;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
+    padding: 1rem 2rem;
+    border: none;
     border-radius: 5px;
-    font-weight: 500;
-    transition: background-color 0.3s ease, color 0.3s ease;
     cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
 }
 
 #continue-button:hover {
-    background-color: #187bcd;
+    background-color: #FFA500;
 }
 
 /* Footer */
@@ -282,35 +300,16 @@ footer {
     color: #187bcd;
 }
 
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
-    /* Responsive Navigation Menu */
-    .nav-menu {
+    .book-now-section {
         flex-direction: column;
-        background-color: #1E90FF;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        display: none;
-    }
-
-    .nav-menu.active {
-        display: flex;
-    }
-
-    .nav-menu li {
-        margin: 1em 0;
-        text-align: center;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    /* Courses Section */
-    .course-card {
-        margin-bottom: 1.5rem;
+        align-items: center;
     }
 
     #calendar {
