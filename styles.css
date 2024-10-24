@@ -493,7 +493,51 @@ footer {
     .map-container {
         height: 400px; /* Adjusted height for mobile view */
     }
+/****** General Book Now Styling ******/
+.book-now-section {
+    margin: 4rem auto;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.calendar-container {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.calendar-container label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.calendar-container input[type="date"],
+.calendar-container select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#book-appointment-button {
+    background-color: #1E90FF;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+#book-appointment-button:hover {
+    background-color: #187bcd;
+}      
     /* Footer */
     .footer-content {
         flex-direction: column;
@@ -504,3 +548,4 @@ footer {
         margin-top: 1rem;
     }
 }
+
