@@ -112,4 +112,222 @@ nav {
     z-index: 1;
 }
 
-/* Other sections omitted for brevity */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 1rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-text {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    background-color: #fff;
+    color: #1E90FF;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #187bcd;
+    color: #fff;
+}
+
+/* Divider */
+.divider {
+    width: 80%;
+    height: 2px;
+    background-color: #e0e0e0;
+    margin: 2rem auto;
+}
+
+/* About Section (with Sailing Boat Background) */
+.about-me {
+    position: relative;
+    padding: 4rem 0;
+    color: #333;
+    background: url('images/sailing_boat.jpg') no-repeat center center/cover;
+    overflow: hidden;
+}
+
+.about-me::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw; /* Stretch to full viewport width */
+    background: rgba(0, 0, 0, 0.5); /* Adjust opacity for readability */
+    z-index: 1;
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-image {
+    flex: 1;
+    max-width: 30%;
+    display: flex;
+    justify-content: center;
+    margin-right: 2rem;
+}
+
+.about-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem; /* Added margin to prevent overlap with header */
+}
+
+.about-description {
+    flex: 2;
+    font-size: 1.1rem;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.about-description h2 {
+    margin-bottom: 1rem;
+}
+
+.about-description p {
+    margin-bottom: 1.5rem;
+}
+
+.about-description .btn {
+    display: inline-block;
+}
+
+/* Footer */
+footer {
+    background-color: #1E90FF;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0; /* Reduced padding for a smaller footer */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.footer-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.social-media a {
+    color: #fff;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.social-media a:hover {
+    color: #187bcd;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Responsive Navigation Menu */
+    .nav-menu {
+        flex-direction: column;
+        background-color: #1E90FF;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 1em 0;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .welcome-text {
+        font-size: 1.5rem;
+    }
+
+    /* About Section */
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-image,
+    .about-description {
+        flex: 1 1 100%;
+    }
+
+    .about-image img {
+        max-width: 80%;
+        margin-bottom: 2rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media {
+        margin-top: 1rem;
+    }
+}
