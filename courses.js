@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const prevMonthButton = document.getElementById("prev-month");
     const nextMonthButton = document.getElementById("next-month");
     const timeSlotsContainer = document.getElementById("time-slots-container");
-    const timeSlotsMorning = document.getElementById("time-slots-morning");
-    const timeSlotsAfternoon = document.getElementById("time-slots-afternoon");
     const continueButtonContainer = document.querySelector(".continue-container");
     const continueButton = document.getElementById("continue-button");
     let selectedDate = null;
@@ -59,20 +57,40 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function generateTimeSlots() {
-        timeSlotsMorning.innerHTML = "";
-        timeSlotsAfternoon.innerHTML = "";
-        const morningSlots = ["9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM"];
-        const afternoonSlots = ["12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM"];
+        // Clear previous slots
+        timeSlotsContainer.innerHTML = "";
 
+        // Create Morning Section
+        const morningSection = document.createElement("div");
+        morningSection.classList.add("time-slots-container-section");
+        const morningHeader = document.createElement("h4");
+        morningHeader.textContent = "Morning";
+        morningSection.appendChild(morningHeader);
+        const morningSlotsContainer = document.createElement("div");
+        morningSlotsContainer.classList.add("time-slots");
+        const morningSlots = ["9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM"];
         morningSlots.forEach(slot => {
             const slotButton = createSlotButton(slot);
-            timeSlotsMorning.appendChild(slotButton);
+            morningSlotsContainer.appendChild(slotButton);
         });
+        morningSection.appendChild(morningSlotsContainer);
+        timeSlotsContainer.appendChild(morningSection);
 
+        // Create Afternoon Section
+        const afternoonSection = document.createElement("div");
+        afternoonSection.classList.add("time-slots-container-section");
+        const afternoonHeader = document.createElement("h4");
+        afternoonHeader.textContent = "Afternoon";
+        afternoonSection.appendChild(afternoonHeader);
+        const afternoonSlotsContainer = document.createElement("div");
+        afternoonSlotsContainer.classList.add("time-slots");
+        const afternoonSlots = ["12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM"];
         afternoonSlots.forEach(slot => {
             const slotButton = createSlotButton(slot);
-            timeSlotsAfternoon.appendChild(slotButton);
+            afternoonSlotsContainer.appendChild(slotButton);
         });
+        afternoonSection.appendChild(afternoonSlotsContainer);
+        timeSlotsContainer.appendChild(afternoonSection);
     }
 
     function createSlotButton(slot) {
