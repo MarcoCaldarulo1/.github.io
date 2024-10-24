@@ -165,6 +165,8 @@ nav {
     display: flex;
     align-items: center;
     gap: var(--spacing-large);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .about-image img {
@@ -182,12 +184,22 @@ footer {
     color: #fff;
     text-align: center;
     padding: var(--spacing-large) 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
 .footer-content {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-media {
+    margin-top: var(--spacing-small);
 }
 
 .social-media a {
@@ -220,15 +232,6 @@ footer {
 
     .hamburger {
         display: block;
-    }
-
-    /* Hero Section */
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .welcome-text {
-        font-size: 1.5rem;
     }
 
     /* About Section */
