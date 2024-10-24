@@ -36,26 +36,26 @@
             <div class="calendar-container">
                 <!-- Calendar Navigation -->
                 <div class="calendar-navigation">
-                    <button id="prev-week" class="calendar-nav-button"><i class="fas fa-chevron-left"></i> Prev</button>
+                    <button id="prev-month" class="calendar-nav-button"><i class="fas fa-chevron-left"></i> Prev</button>
                     <h3 id="current-month">May 2023</h3>
-                    <button id="next-week" class="calendar-nav-button">Next <i class="fas fa-chevron-right"></i></button>
+                    <button id="next-month" class="calendar-nav-button">Next <i class="fas fa-chevron-right"></i></button>
                 </div>
                 <!-- Calendar -->
-                <div id="calendar"></div>
+                <div id="calendar" class="calendar-grid"></div>
                 <!-- Time Slots -->
-                <div id="time-slots-container">
+                <div id="time-slots-container" class="hidden">
                     <h3>Available on <span id="selected-date">Wednesday, May 31, 2023</span></h3>
                     <div class="time-slots">
-                        <div class="time-slot">9:00 AM</div>
-                        <div class="time-slot">9:30 AM</div>
-                        <div class="time-slot">10:00 AM</div>
-                        <div class="time-slot">12:00 PM</div>
-                        <div class="time-slot">12:30 PM</div>
-                        <div class="time-slot">1:00 PM</div>
+                        <button class="time-slot">9:00 AM</button>
+                        <button class="time-slot">9:30 AM</button>
+                        <button class="time-slot">10:00 AM</button>
+                        <button class="time-slot">12:00 PM</button>
+                        <button class="time-slot">12:30 PM</button>
+                        <button class="time-slot">1:00 PM</button>
                     </div>
                 </div>
                 <!-- Continue Button -->
-                <div class="continue-container">
+                <div class="continue-container hidden">
                     <button id="continue-button">Continue</button>
                 </div>
             </div>
