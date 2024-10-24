@@ -30,8 +30,8 @@
 
     <!-- Hero Section with Waves Video -->
     <header class="hero-section">
-        <video autoplay muted loop playsinline class="wave-video">
-            <source src="images/waves (1).mp4" type="video/mp4">
+        <video autoplay muted loop playsinline class="wave-video" preload="auto">
+            <source src="images/waves.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="video-overlay"></div>
@@ -40,8 +40,8 @@
             <h1>Marco Caldarulo</h1>
             <a href="contact.html" class="btn">Get in Touch</a>
         </div>
-        <div class="sailing-image">
-            <img src="images/sailing_boat.jpg" alt="Sailing Boat Image">
+        <div class="sailing-image" style="position: absolute; bottom: 10%; right: 5%; opacity: 0.8;">
+            <img src="images/sailing_boat.jpg" alt="Sailing Boat Image" style="width: 200px; height: auto;">
         </div>
     </header>
 
@@ -51,9 +51,9 @@
     <!-- Main Content Area -->
     <main class="main-content">
         <!-- About Section -->
-        <section class="about-me">
+        <section class="about-me" style="background: url('images/sailing_boat.jpg') no-repeat center center/cover; position: relative;">
             <div class="container">
-                <div class="about-content">
+                <div class="about-content" style="background-color: rgba(240, 240, 240, 0.8); padding: 2rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                     <div class="about-image">
                         <img src="images/Marco_linkedin.jpeg" alt="Marco Caldarulo">
                     </div>
@@ -84,6 +84,6 @@
     </footer>
 
     <!-- JavaScript for Interactive Elements -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
