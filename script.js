@@ -67,3 +67,59 @@ function handleAuthClick(event) {
 
 // Load the Google API
 gapi.load('client:auth2', handleClientLoad);
+
+
+// Booking Calendar Interaction
+document.addEventListener('DOMContentLoaded', () => {
+    const calendar = document.getElementById('calendar');
+    const timeSlots = document.querySelector('.time-slots');
+    const continueButton = document.getElementById('continue-button');
+    let selectedDate;
+
+    // Set up calendar navigation buttons (if applicable)
+    document.querySelectorAll('.calendar-nav-button').forEach(button => {
+        button.addEventListener('click', (e) => {
+            // Handle changing months/weeks in the calendar
+        });
+    });
+
+    // Handle date selection from the calendar
+    calendar.addEventListener('click', (e) => {
+        if (e.target.classList.contains('date')) {
+            selectedDate = e.target.dataset.date; // Assume date elements have data-date attributes
+            // Highlight the selected date and show time slots
+            document.querySelectorAll('.date').forEach(d => d.classList.remove('selected'));
+            e.target.classList.add('selected');
+            loadTimeSlots(selectedDate);
+        }
+    });
+
+    // Handle time slot selection
+    timeSlots.addEventListener('click', (e) => {
+        if (e.target.classList.contains('time-slot')) {
+            document.querySelectorAll('.time-slot').forEach(slot => slot.classList.remove('selected'));
+            e.target.classList.add('selected');
+        }
+    });
+
+    // Handle continue button click for booking
+    continueButton.addEventListener('click', handleAuthClick);
+});
+
+// Load available time slots for the selected date
+function loadTimeSlots(date) {
+    const timeSlots = document.querySelector('.time-slots');
+    timeSlots.innerHTML = ''; // Clear existing time slots
+    // Add available time slots for the selected date
+    // These would ideally be fetched from a server or a preset list
+    const availableTimes = ['09:00', '09:30', '10:00', '12:00', '12:30', '13:00'];
+    availableTimes.forEach(time => {
+        const slot = document.createElement('div');
+        slot.classList.add('time-slot');
+        slot.textContent = time;
+        timeSlots.appendChild(slot);
+    });
+}
+
+
+
