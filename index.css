@@ -167,7 +167,7 @@ nav {
     position: relative;
     padding: 4rem 0;
     color: #333;
-    background: url('images/sailing_boat.jpg') no-repeat center center/cover;
+    background: rgba(240, 240, 240, 0.7); /* Light grey background with transparency */
     overflow: hidden;
 }
 
@@ -179,7 +179,7 @@ nav {
     right: 0;
     bottom: 0;
     width: 100vw; /* Stretch to full viewport width */
-    background: rgba(0, 0, 0, 0.5); /* Adjust opacity for readability */
+    background: rgba(0, 0, 0, 0.3); /* Adjust opacity for readability */
     z-index: 1;
 }
 
