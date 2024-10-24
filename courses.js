@@ -5,11 +5,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const prevMonthButton = document.getElementById("prev-month");
     const nextMonthButton = document.getElementById("next-month");
     const timeSlotsContainer = document.getElementById("time-slots-container");
-    const timeSlots = document.querySelectorAll(".time-slot");
+    const timeSlotsMorning = document.getElementById("time-slots-morning");
+    const timeSlotsAfternoon = document.getElementById("time-slots-afternoon");
     const continueButtonContainer = document.querySelector(".continue-container");
     const continueButton = document.getElementById("continue-button");
     let selectedDate = null;
     let currentDate = new Date();
+    let selectedTimeSlots = [];
 
     // Helper Functions
     function updateCalendar() {
@@ -40,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
         selectedDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
         document.getElementById("selected-date").textContent = selectedDate.toDateString();
         highlightSelectedDay(day);
+        generateTimeSlots();
         timeSlotsContainer.classList.remove("hidden");
         continueButtonContainer.classList.add("hidden");
     }
@@ -55,11 +58,54 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    function handleTimeSlotClick(event) {
-        timeSlots.forEach(slot => slot.classList.remove("selected"));
-        event.target.classList.add("selected");
-        continueButtonContainer.classList.remove("hidden");
+    function generateTimeSlots() {
+        timeSlotsMorning.innerHTML = "";
+        timeSlotsAfternoon.innerHTML = "";
+        const morningSlots = ["9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM"];
+        const afternoonSlots = ["12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM"];
+
+        morningSlots.forEach(slot => {
+            const slotButton = createSlotButton(slot);
+            timeSlotsMorning.appendChild(slotButton);
+        });
+
+        afternoonSlots.forEach(slot => {
+            const slotButton = createSlotButton(slot);
+            timeSlotsAfternoon.appendChild(slotButton);
+        });
     }
+
+    function createSlotButton(slot) {
+        const slotButton = document.createElement("button");
+        slotButton.classList.add("time-slot");
+        slotButton.textContent = slot;
+        slotButton.addEventListener("click", handleTimeSlotClick);
+        return slotButton;
+    }
+
+    function handleTimeSlotClick(event) {
+        const selectedSlot = event.target.textContent;
+        if (selectedTimeSlots.includes(selectedSlot)) {
+            selectedTimeSlots = selectedTimeSlots.filter(slot => slot !== selectedSlot);
+            event.target.classList.remove("selected");
+        } else {
+            selectedTimeSlots.push(selectedSlot);
+            event.target.classList.add("selected");
+        }
+        continueButtonContainer.classList.toggle("hidden", selectedTimeSlots.length === 0);
+    }
+
+    function sendCalendarInvite(email) {
+        // Here you would integrate with a backend or use a service like Google Calendar API or Outlook API to send the invite.
+        alert(`Calendar invite sent to ${email} for ${selectedDate.toDateString()} from ${selectedTimeSlots[0]} to ${selectedTimeSlots[selectedTimeSlots.length - 1]}`);
+    }
+
+    continueButton.addEventListener("click", function() {
+        const userEmail = prompt("Please enter your email:");
+        if (userEmail) {
+            sendCalendarInvite(userEmail);
+        }
+    });
 
     // Event Listeners
     prevMonthButton.addEventListener("click", function() {
@@ -72,11 +118,6 @@ document.addEventListener("DOMContentLoaded", function() {
         updateCalendar();
     });
 
-    timeSlots.forEach(slot => {
-        slot.addEventListener("click", handleTimeSlotClick);
-    });
-
     // Initial Render
     updateCalendar();
 });
-
