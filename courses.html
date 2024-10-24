@@ -1,8 +1,78 @@
-<main>
-    <h1>Courses</h1>
-    <ul>
-        <li><strong>Course Name 1:</strong> Brief description.</li>
-        <li><strong>Course Name 2:</strong> Brief description.</li>
-        <!-- Add more courses as needed -->
-    </ul>
-</main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses - Marco Caldarulo</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adding additional fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Marco Caldarulo</a>
+            <ul class="nav-menu">
+                <li><a href="about.html" class="nav-button">About</a></li>
+                <li><a href="courses.html" class="nav-button">Courses</a></li>
+                <li><a href="cv.html" class="nav-button">CV</a></li>
+                <li><a href="seminars.html" class="nav-button">Seminars</a></li>
+                <li><a href="contact.html" class="nav-button">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="courses-main">
+        <section class="courses-section">
+            <h2>Courses</h2>
+            <div class="courses-content">
+                <p>
+                    Browse through my various courses on private equity, infrastructure investments, and strategic advisory. Below, you can book a consultation directly with me.
+                </p>
+            </div>
+        </section>
+
+        <!-- Book Now Section -->
+        <section class="book-now-section">
+            <h2>Book an Appointment</h2>
+            <p>Select a date and time that suits you for a one-on-one session.</p>
+            <div class="calendar-container">
+                <label for="available-dates">Choose a date:</label>
+                <input type="date" id="available-dates" name="available-dates">
+                
+                <label for="time-slots">Choose a time slot:</label>
+                <select id="time-slots" name="time-slots">
+                    <option value="9:00 AM">9:00 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <!-- Add more times as needed -->
+                </select>
+
+                <button id="book-appointment-button" class="btn">Book Now</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2024 Marco Caldarulo</p>
+            <div class="social-media">
+                <a href="https://linkedin.com/in/marcocaldarulo" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:marcocaldarulo1@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Appointment Booking -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
