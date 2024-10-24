@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Courses - Marco Caldarulo</title>
+    <title>Book a Course Appointment - Marco Caldarulo</title>
     <link rel="stylesheet" href="courses.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Adding additional fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -28,34 +28,36 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Main Content Area -->
     <main class="courses-main">
-        <section class="courses-section">
-            <h2>Courses</h2>
-            <div class="courses-content">
-                <p>
-                    Browse through my various courses on private equity, infrastructure investments, and strategic advisory. Below, you can book a consultation directly with me.
-                </p>
-            </div>
-        </section>
-
-        <!-- Book Now Section -->
+        <!-- Booking Section -->
         <section class="book-now-section">
             <h2>Book an Appointment</h2>
-            <p>Select a date and time that suits you for a one-on-one session.</p>
             <div class="calendar-container">
-                <label for="available-dates">Choose a date:</label>
-                <input type="date" id="available-dates" name="available-dates">
-                
-                <label for="time-slots">Choose a time slot:</label>
-                <select id="time-slots" name="time-slots">
-                    <option value="9:00 AM">9:00 AM</option>
-                    <option value="10:00 AM">10:00 AM</option>
-                    <option value="11:00 AM">11:00 AM</option>
-                    <!-- Add more times as needed -->
-                </select>
-
-                <button id="book-appointment-button" class="btn">Book Now</button>
+                <!-- Calendar Navigation -->
+                <div class="calendar-navigation">
+                    <button id="prev-week" class="calendar-nav-button"><i class="fas fa-chevron-left"></i> Prev</button>
+                    <h3 id="current-month">May 2023</h3>
+                    <button id="next-week" class="calendar-nav-button">Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+                <!-- Calendar -->
+                <div id="calendar"></div>
+                <!-- Time Slots -->
+                <div id="time-slots-container">
+                    <h3>Available on <span id="selected-date">Wednesday, May 31, 2023</span></h3>
+                    <div class="time-slots">
+                        <div class="time-slot">9:00 AM</div>
+                        <div class="time-slot">9:30 AM</div>
+                        <div class="time-slot">10:00 AM</div>
+                        <div class="time-slot">12:00 PM</div>
+                        <div class="time-slot">12:30 PM</div>
+                        <div class="time-slot">1:00 PM</div>
+                    </div>
+                </div>
+                <!-- Continue Button -->
+                <div class="continue-container">
+                    <button id="continue-button">Continue</button>
+                </div>
             </div>
         </section>
     </main>
@@ -65,14 +67,13 @@
         <div class="container footer-content">
             <p>&copy; 2024 Marco Caldarulo</p>
             <div class="social-media">
-                <a href="https://linkedin.com/in/marcocaldarulo" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/marcocaldarulo/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:marcocaldarulo1@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Appointment Booking -->
-    <script src="https://apis.google.com/js/api.js"></script>
-    <script src="script.js"></script>
+    <!-- JavaScript for Booking Logic -->
+    <script src="courses.js"></script>
 </body>
 </html>
