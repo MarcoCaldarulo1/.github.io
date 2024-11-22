@@ -1,5 +1,7 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Variables
+document.addEventListener("DOMContentLoaded", function () {
+    // Existing functionality (if any)
+
+    // Calendar Variables
     const calendar = document.getElementById("calendar");
     const currentMonth = document.getElementById("current-month");
     const prevMonthButton = document.getElementById("prev-month");
@@ -29,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const dayCell = document.createElement("div");
             dayCell.classList.add("calendar-day");
             dayCell.textContent = day;
-            dayCell.addEventListener("click", function() {
+            dayCell.addEventListener("click", function () {
                 selectDate(day);
             });
             calendar.appendChild(dayCell);
@@ -114,11 +116,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function sendCalendarInvite(email) {
-        // Here you would integrate with a backend or use a service like Google Calendar API or Outlook API to send the invite.
         alert(`Calendar invite sent to ${email} for ${selectedDate.toDateString()} from ${selectedTimeSlots[0]} to ${selectedTimeSlots[selectedTimeSlots.length - 1]}`);
     }
 
-    continueButton.addEventListener("click", function() {
+    continueButton.addEventListener("click", function () {
         const userEmail = prompt("Please enter your email:");
         if (userEmail) {
             sendCalendarInvite(userEmail);
@@ -126,12 +127,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Event Listeners
-    prevMonthButton.addEventListener("click", function() {
+    prevMonthButton.addEventListener("click", function () {
         currentDate.setMonth(currentDate.getMonth() - 1);
         updateCalendar();
     });
 
-    nextMonthButton.addEventListener("click", function() {
+    nextMonthButton.addEventListener("click", function () {
         currentDate.setMonth(currentDate.getMonth() + 1);
         updateCalendar();
     });
