@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Book a Course Appointment - Marco Caldarulo</title>
-    <link rel="stylesheet" href="courses.css">
+    <title>Marco Caldarulo - Welcome to my personal page</title>
+    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -28,31 +28,36 @@
         </div>
     </nav>
 
-    <!-- Main Content Area -->
-    <main class="courses-main">
-        <!-- Booking Section -->
-        <section class="book-now-section">
-            <h2>Book an Appointment</h2>
-            <div class="calendar-container">
-                <!-- Calendar Navigation -->
-                <div class="calendar-navigation">
-                    <button id="prev-month" class="calendar-nav-button"><i class="fas fa-chevron-left"></i> Prev</button>
-                    <h3 id="current-month">May 2023</h3>
-                    <button id="next-month" class="calendar-nav-button">Next <i class="fas fa-chevron-right"></i></button>
-                </div>
-                <!-- Calendar -->
-                <div id="calendar" class="calendar-grid"></div>
-                <!-- Time Slots -->
-                <div id="time-slots-container" class="hidden">
-                    <h3>Available on <span id="selected-date">Wednesday, May 31, 2023</span></h3>
-                </div>
-                <!-- Continue Button -->
-                <div class="continue-container hidden">
-                    <button id="continue-button">Continue</button>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- Hero Section with Waves Video -->
+    <header class="hero-section">
+        <video autoplay muted loop playsinline class="wave-video">
+            <source src="images/waves.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+        <div class="container hero-content">
+            <h2 class="welcome-text">Welcome to my personal page</h2>
+            <h1>Marco Caldarulo</h1>
+            <a href="#" class="btn" id="open-popup">Leave Your Email</a>
+        </div>
+    </header>
+
+    <!-- Email Popup -->
+    <div id="email-popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Request an Invite</h2>
+            <p>Please leave your email to receive an invite for a meeting.</p>
+            <form id="email-form">
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            <p id="success-message" class="hidden">Thank you! You will receive an invite soon.</p>
+        </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider"></div>
 
     <!-- Footer -->
     <footer>
@@ -65,7 +70,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Booking Logic -->
-    <script src="courses.js"></script>
+    <!-- JavaScript for Popup -->
+    <script src="script.js"></script>
 </body>
 </html>
